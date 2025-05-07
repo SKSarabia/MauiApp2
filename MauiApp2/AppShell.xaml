@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="Menú Principal"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:LoginFlow}"
+        Route="LoginFlow" />
 
 </Shell>

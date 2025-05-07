@@ -2,12 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.CrearContactoPage"
+             Shell.NavBarIsVisible="False"
              Title="CrearContactoPage">
-    <FlexLayout Direction="Column" AlignItems="Start" JustifyContent="Center" Padding="85">
-        <Entry x:Name="nombreEntry" Placeholder="Nombre" WidthRequest="250" />
-        <Entry x:Name="telefonoEntry" Placeholder="Teléfono" WidthRequest="250" />
-        <Entry x:Name="correoEntry" Placeholder="Correo" WidthRequest="250" />
-        <Entry x:Name="direccionEntry" Placeholder="Dirección" WidthRequest="250" />
-        <Button Text="Guardar Contacto" WidthRequest="250" Clicked="GuardarContacto"/>
+    <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Center" 
+                BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
+        <Entry x:Name="nombreEntry" Placeholder="Nombre" WidthRequest="250" 
+               BackgroundColor="{AppThemeBinding Light=#1F2933, Dark=white}" 
+               TextColor="{AppThemeBinding Light=white, Dark=black}" />
+        <Entry x:Name="telefonoEntry" Placeholder="Teléfono" WidthRequest="250" 
+               BackgroundColor="{AppThemeBinding Light=#1F2933, Dark=white}" 
+               TextColor="{AppThemeBinding Light=white, Dark=black}" Margin="0,1,0,0"/>
+        <Entry x:Name="correoEntry" Placeholder="Correo" WidthRequest="250" 
+               BackgroundColor="{AppThemeBinding Light=#1F2933, Dark=white}" 
+               TextColor="{AppThemeBinding Light=white, Dark=black}" Margin="0,1,0,0"/>
+        <Entry x:Name="direccionEntry" Placeholder="Dirección" WidthRequest="250" 
+               BackgroundColor="{AppThemeBinding Light=#1F2933, Dark=white}" 
+               TextColor="{AppThemeBinding Light=white, Dark=black}" Margin="0,1,0,0"/>
+        <Button Text="Guardar Contacto" WidthRequest="250" Clicked="GuardarContacto"
+                BackgroundColor="#3B82F6" TextColor="White" Margin="0,60,0,0"/>
     </FlexLayout>
 </ContentPage>

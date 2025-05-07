@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2.LoginFlow"
+             Shell.NavBarIsVisible="False"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             Title="LoginPage">
+    <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#1F2933">
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+                <Frame BorderColor="#D1D5DB" CornerRadius="10" HasShadow="True" Padding="15" BackgroundColor="White">
+                    <VerticalStackLayout Spacing="15">
+                        <VerticalStackLayout Padding="10" BackgroundColor="White">
+                            <Label Text="Login" FontSize="30" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                            <Label Text="Para acceder!" FontSize="14" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+
+                        <Label Text="Usuario" FontFamily="Consolas" TextColor="Black"/>
+                        <Entry x:Name="Username" Text="{Binding Email, Mode=TwoWay}" 
+                               Placeholder="Username" FontSize="18" Margin="0,5,0,0"
+                               BackgroundColor="#E5E7EB" TextColor="Black"/>
+
+                        <Label Text="Password" FontFamily="Consolas" TextColor="Black"/>
+                        <Entry x:Name="Password" Text="{Binding Password, Mode=TwoWay}" 
+                               Placeholder="Password" IsPassword="True" FontSize="18" Margin="0,5,0,0"
+                               BackgroundColor="#E5E7EB" TextColor="Black"/>
+
+                        <Button x:Name="LoginButton" Text="Acceso" Clicked="LoginButton_Clicked" 
+                                HorizontalOptions="FillAndExpand" Margin="0,20,0,0"
+                                BackgroundColor="#3B82F6" TextColor="White" CornerRadius="8"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label HorizontalOptions="Center" TextColor="White">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="No tienes una cuenta? " FontFamily="Consolas" FontAttributes="Bold" TextColor="#F9FAFB"/>
+                                <Span Text="Registrate" FontFamily="Consolas" FontAttributes="Bold" 
+                                      TextColor="#3B82F6" TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizerReg_Tapped" 
+                                                              CommandParameter="https://learn.microsoft.com/dotnet/maui/"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label HorizontalOptions="Center" TextColor="White">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Olvidaste tu contraseña? " FontFamily="Consolas" FontAttributes="Bold" TextColor="#F9FAFB"/>
+                                <Span Text="Recuperar" FontFamily="Consolas" FontAttributes="Bold" 
+                                      TextColor="#3B82F6" TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizerPwd_Tapped" 
+                                                              CommandParameter="https://learn.microsoft.com/dotnet/maui/"/>
+                                    </Span.GestureRecognizers>
+                                </Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </VerticalStackLayout>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

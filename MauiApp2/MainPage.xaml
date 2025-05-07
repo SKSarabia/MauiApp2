@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp2.MainPage">
-    <ScrollView>
+             x:Class="MauiApp2.MainPage"
+             Shell.NavBarIsVisible="False">
+    <ScrollView BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
         <StackLayout Padding="40,150,40,20" Spacing="60">
-            <Button Text="Lista de Contactos" Clicked="IrListaContactos"/>
-            <Button Text="Crear Nuevo Contacto" Clicked="IrCrearContacto"/>
-            <Button Text="Configuración" Clicked="IrConfiguracion"/>
+            <Button Text="Lista de Contactos" Clicked="IrListaContactos" 
+                    BackgroundColor="#3B82F6" TextColor="White"/>
+            <Button Text="Crear Nuevo Contacto" Clicked="IrCrearContacto"
+                    BackgroundColor="#3B82F6" TextColor="White"/>
+            <Button Text="Configuración" Clicked="IrConfiguracion"
+                    BackgroundColor="#3B82F6" TextColor="White"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

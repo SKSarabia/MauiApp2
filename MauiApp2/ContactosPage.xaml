@@ -2,18 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.ContactosPage"
+             Shell.NavBarIsVisible="False"
              Title="ContactosPage">
-    <VerticalStackLayout Padding="10">
-        <Label Text="Mis Contactos" FontSize="Large" />
-        <CollectionView x:Name="ContactosListView" ItemsSource="{Binding contactos}">
+    <VerticalStackLayout Padding="10" BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
+        <Label Text="Mis Contactos" FontSize="Large" TextColor="{AppThemeBinding Light=black, Dark=white}"/>
+        <CollectionView x:Name="ContactosListView" ItemsSource="{Binding contactos}" 
+                        BackgroundColor="{AppThemeBinding Light=#1F2933, Dark=#FAFAFA}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border Margin="5" Padding="15">
                         <StackLayout>
-                            <Label Text="{Binding Nombre}" FontAttributes="Bold" />
-                            <Label Text="{Binding Telefono}" />
-                            <Label Text="{Binding Correo}" />
-                            <Button Text="Ver Detalle" Clicked="IrDetalleContacto" BindingContext="{Binding}" />
+                            <Label Text="{Binding Nombre}" FontAttributes="Bold" 
+                                   TextColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}"/>
+                            <Label Text="{Binding Telefono}" 
+                                   TextColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}"/>
+                            <Label Text="{Binding Correo}" 
+                                   TextColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}"/>
+                            <Button Text="Ver Detalle" Clicked="IrDetalleContacto" BindingContext="{Binding}" 
+                                    BackgroundColor="#3B82F6" TextColor="White"/>
                         </StackLayout>
                     </Border>
                 </DataTemplate>
