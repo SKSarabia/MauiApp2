@@ -5,6 +5,17 @@ public partial class LoginFlow : ContentPage
     public LoginFlow()
     {
         InitializeComponent();
+        VerificarSesion();
+    }
+
+    private async void VerificarSesion()
+    {
+        var hasAuth = await SecureStorage.GetAsync("hasAuth");
+        if (hasAuth == "true")
+        {
+            // Usuario autenticado
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 
     protected override bool OnBackButtonPressed()
@@ -13,19 +24,13 @@ public partial class LoginFlow : ContentPage
         return true;
     }
 
-    private void TapGestureRecognizerPwd_Tapped(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizerPwd_Tapped(object sender, TappedEventArgs e)
     {
-        Label Reg = (sender as Label);
-        var Msg = Reg.FormattedText.Spans[1].Text;
-        //var customerName = (sender as Label).Text;
-        DisplayAlert("Recuperar Contraseña", $"Name : {Msg}", "ok");
+        await Navigation.PushAsync(new RecuperarContraseñaPage());
     }
-    private void TapGestureRecognizerReg_Tapped(object sender, TappedEventArgs e)
+    private async void TapGestureRecognizerReg_Tapped(object sender, TappedEventArgs e)
     {
-        Label Reg = (sender as Label);
-        var Msg = Reg.FormattedText.Spans[0].Text;
-        //var customerName = (sender as Label).Text;
-        DisplayAlert("Registrar Usuario", $"Name : {Msg}", "ok");
+        await Navigation.PushAsync(new RegistrarUsuarioPage());
     }
 
     private async void LoginButton_Clicked(object sender, EventArgs e)

@@ -28,4 +28,12 @@ public partial class ConfiguracionPage : ContentPage
             DisplayAlert("Tema", "Modo Oscuro activado", "OK");
         }
     }
+
+    private async void CerrarSesion(object sender, EventArgs e)
+    {
+        // Eliminar credenciales
+        Preferences.Remove("UsuarioActual");
+        SecureStorage.Remove("hasAuth");
+        await Navigation.PushAsync(new LoginFlow());
+    }
 }

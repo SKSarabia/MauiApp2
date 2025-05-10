@@ -3,23 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp2.ConfiguracionPage"
              Shell.NavBarIsVisible="False"
-             Title="ConfiguracionPage">
-    <AbsoluteLayout BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
-        <Label Text="Configuración" FontSize="Large"
-               AbsoluteLayout.LayoutBounds="1,0.1,320,60"
-               AbsoluteLayout.LayoutFlags="PositionProportional" />
+             Title="Configuración"
+             BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
+    <VerticalStackLayout Padding="20" Spacing="25" HorizontalOptions="Center">
 
-        <Switch x:Name="NotificacionesSwitch" Toggled="ActivarNotificaciones"
-                AbsoluteLayout.LayoutBounds="0.05,0.3,110,40"
-                AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <Label Text="Configuración" FontSize="24" FontAttributes="Bold" 
+               TextColor="{AppThemeBinding Light=Black, Dark=White}" HorizontalOptions="Center" />
 
-        <Label Text="Activar Notificaciones"
-               AbsoluteLayout.LayoutBounds="0.6,0.315,200,30"
-               AbsoluteLayout.LayoutFlags="PositionProportional" />
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="Activar Notificaciones" FontSize="18"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+            <Switch x:Name="NotificacionesSwitch" Toggled="ActivarNotificaciones"/>
+        </HorizontalStackLayout>
 
         <Button x:Name="TemaButton" Text="Cambiar Tema" Clicked="CambiarTema"
-                AbsoluteLayout.LayoutBounds="0.5,0.5,150,50"
-                AbsoluteLayout.LayoutFlags="PositionProportional" 
-                BackgroundColor="#3B82F6" TextColor="White"/>
-    </AbsoluteLayout>
+                BackgroundColor="#3B82F6" TextColor="White" WidthRequest="250"/>
+
+        <Button Text="Cerrar Sesión" Clicked="CerrarSesion"
+                BackgroundColor="#3B82F6" TextColor="White" WidthRequest="250"/>
+
+    </VerticalStackLayout>
 </ContentPage>
