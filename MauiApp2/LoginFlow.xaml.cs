@@ -1,3 +1,6 @@
+using MauiApp2.Datos;
+using MauiApp2.Modelos;
+
 namespace MauiApp2;
 
 public partial class LoginFlow : ContentPage
@@ -33,9 +36,11 @@ public partial class LoginFlow : ContentPage
         await Navigation.PushAsync(new RegistrarUsuarioPage());
     }
 
+    private readonly UsuarioDatabase _usuarioDb = new();
+
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
-        if (IsCredentialCorrect(Username.Text, Password.Text))
+        if (await IsCredentialCorrect(Username.Text, Password.Text))
         {
             Preferences.Set("UsuarioActual", Username.Text.Trim());
             await SecureStorage.SetAsync("hasAuth", "true");
@@ -48,9 +53,9 @@ public partial class LoginFlow : ContentPage
         }
     }
 
-
-    bool IsCredentialCorrect(string username, string password)
+    private async Task<bool> IsCredentialCorrect(string username, string password)
     {
-        return Username.Text == "admin" && Password.Text == "1234";
+        var usuario = await _usuarioDb.ObtenerUsuarioAsync(username.Trim());
+        return usuario != null && usuario.Contraseña == password;
     }
 }

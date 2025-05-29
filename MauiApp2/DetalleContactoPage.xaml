@@ -5,17 +5,14 @@
              Shell.NavBarIsVisible="False"
              Title="DetalleContactoPage">
     <Grid Padding="10" RowSpacing="13" ColumnDefinitions="Auto,*" 
-          RowDefinitions="Auto,Auto,Auto,Auto" BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
+          RowDefinitions="Auto,Auto,Auto" BackgroundColor="{AppThemeBinding Light=#FAFAFA, Dark=#1F2933}">
         <Label Text="Nombre:" FontAttributes="Bold" Margin="5,0"/>
-        <Label x:Name="NombreLabel" Grid.Row="0" Grid.Column="1" Margin="5,0"/>
+        <Label Grid.Row="0" Grid.Column="1" Margin="5,0" Text="{Binding Nombre}" />
 
         <Label Text="Teléfono:" FontAttributes="Bold" Margin="5,0" Grid.Row="1"/>
-        <Label x:Name="TelefonoLabel" Grid.Row="1" Grid.Column="1" Margin="5,0"/>
+        <Label Grid.Row="1" Grid.Column="1" Margin="5,0" Text="{Binding Telefono}" />
 
         <Label Text="Correo:" FontAttributes="Bold" Margin="5,0" Grid.Row="2"/>
-        <Label x:Name="CorreoLabel" Grid.Row="2" Grid.Column="1" Margin="5,0"/>
-
-        <Label Text="Dirección:" FontAttributes="Bold" Margin="5,0" Grid.Row="3"/>
-        <Label x:Name="DireccionLabel" Grid.Row="3" Grid.Column="1" Margin="5,0"/>
+        <Label Grid.Row="2" Grid.Column="1" Margin="5,0" Text="{Binding CorreoElectronico}" />
     </Grid>
 </ContentPage>
